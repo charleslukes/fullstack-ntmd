@@ -11,10 +11,10 @@ function App() {
     setLoading(true);
     fetch("http://localhost:3001/api/crypto/generate_hash", {
       method: "post",
-      dataType: 'json',
+      dataType: "json",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         data,
@@ -30,7 +30,9 @@ function App() {
         setResponse(JSON.stringify(resp));
       })
       .catch((err) => {
-        setResponse(`${err.statusText}, input must be a valid 256 bit hexadecimal`)
+        setResponse(
+          `${err.statusText}, input must be a valid 256 bit hexadecimal`
+        );
       })
       .finally(() => {
         setLoading(false);
@@ -50,7 +52,7 @@ function App() {
         <div className="board">
           <h3>RESULT</h3>
           <div className="result-board">
-            <code className="result">{loading ? "Loading..." : response}</code>
+            {loading ? "Loading..." : <div className="result">{response}</div>}
           </div>
         </div>
       </div>
