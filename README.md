@@ -1,5 +1,7 @@
 # Project 
 
+This project finds keccak256 that is lower than value entered by user and send it back along with nounce. 
+
 This repo contains both the client and backend of the project 
 
 ### Usage 
